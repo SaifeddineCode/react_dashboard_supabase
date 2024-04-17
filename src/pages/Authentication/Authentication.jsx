@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom'
 
 const Authentication = ({setToken}) => {
 
-    const [currentSession,setCurrentSession] = useState("register")
+    const [currentSession,setCurrentSession] = useState("login")
 
     // const {pathname} = useLocation()
 

@@ -63,14 +63,14 @@ const Login = ({setToken,setCurrentSession}) => {
             <img  src={login} alt='loginImage' />
         </div>
         <div className='flex gap-6 flex-col sm:px-10  w-full md:w-1/2'>
-            <div>
+            {/* <div>
                 <span>Don’t have an account? </span>
                 <Link 
                 className=' underline text-blue-700 font-semibold'
                 to={"/register"}
                 onClick={()=>setCurrentSession("register")}
                 > Get Started </Link>
-            </div>
+            </div> */}
             <div>
                 <h1 className='text-3xl font-bold' >Sign in</h1>
                 <p className='text-gray-400' >Enter your details below. </p>

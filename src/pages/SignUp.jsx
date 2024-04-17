@@ -19,12 +19,6 @@ const SignUp = ({setCurrentSession}) => {
     const [profilImage,setProfilImage] = useState()
 
 
-
-    // console.log(profilImage)
-    
-
-    // const [userImgae,setUserImage] = useState()
-
     const [showPassword,setShowPassword] = useState(false)
 
 
@@ -86,17 +80,18 @@ const SignUp = ({setCurrentSession}) => {
                     full_name: fullName,
                     image : URL_IMAGE
                     },
-                    emailRedirectTo:"http://localhost:3000/"
+                    // emailRedirectTo:"http://localhost:3000/"
                 }
                 }
             )
-            
-            alert("check you email box , for verification")
 
-            handleUpload()
+            // handleUpload()
 
             if(error){
                 throw  error
+            } else {
+                alert("check you email box , for verification")
+                handleUpload()
             }
         } catch (error) {
             alert(error)

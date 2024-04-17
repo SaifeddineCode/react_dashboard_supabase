@@ -9,31 +9,6 @@ import { SyncLoader } from 'react-spinners';
 
 const Blog = () => {
 
-
-
-  // const [blogs, setBlogs] = useState([]);
-
-  //   useEffect(() => {
-  //       const generateBlogs = () => {
-  //           const newBlogs = [];
-  //           for (let i = 1; i <= 23; i++) {
-  //               const blog = {
-  //                   title: `Sample Blog Title ${i}`,
-  //                   authorImage :`https://source.unsplash.com/random/200x200?sig=${i + 2}`,
-  //                   views: Math.floor(Math.random() * 5000) + 1000,
-  //                   share: Math.floor(Math.random() * 100),
-  //                   comments: Math.floor(Math.random() * 1000),
-  //                   date: new Date().toDateString() ,
-  //                   bgImage: `https://source.unsplash.com/random/200x200?sig=${i}`,
-  //                   profileImage: `https://source.unsplash.com/random/200x200?sig=${i + 1}`
-  //               };
-  //               newBlogs.push(blog);
-  //           }
-  //           setBlogs(newBlogs);
-  //       };
-  //       generateBlogs();
-  //   }, []);
-
   const [isAddNewPost,setIsAddingNewPost] = useState(false)
 
   const {data :blogs ,isLoading} = useQuery({
@@ -59,16 +34,22 @@ const Blog = () => {
     <div>
       <FirstSection setIsAddingNewPost={setIsAddingNewPost} text={"Blog"} hasaButoon={true} textButton={"New Post"}  />
       <SearchPost  />
-      <div className='flex justify-between mt-10 flex-wrap gap-2'>
+      <div>
 
        {
-        isLoading ? <div className='flex  mt-10 justify-center items-center'>
-                      <SyncLoader color="#36d7b7" /> 
-                    </div> 
-                    :
-        blogs?.map((blog)=>{
-          return <SinglePost blog={blog} blogs={blogs} />
-        })
+        isLoading ? 
+        <div className='flex  mt-10 justify-center items-center'>
+          <SyncLoader color="#36d7b7" /> 
+        </div> 
+        :
+        
+        <div className='flex justify-between mt-10 flex-wrap gap-2'>
+        {
+          blogs?.map((blog)=>{
+            return <SinglePost blog={blog} blogs={blogs} />
+          })
+        }  
+        </div>
 
        }    
 

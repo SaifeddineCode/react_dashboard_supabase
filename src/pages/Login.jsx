@@ -36,10 +36,14 @@ const Login = ({setToken,setCurrentSession}) => {
             // dispatch(getCurrentUser(data?.user.user_metadata))
             setToken(data?.user)
             navigate("/")
-            window.location.reload();
+            // window.location.reload();
 
             
-            if(error) throw error
+            if(error){
+                throw error
+            } else {
+                window.location.reload();
+            }
 
         } catch (error) {
             toast.error("Email or password not correct")

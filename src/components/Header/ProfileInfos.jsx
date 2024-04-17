@@ -9,8 +9,6 @@ const ProfileInfos = ({token,setShowInfo,currentUser}) => {
     
   const navigate = useNavigate()
 
-  const fullName = token.user_metadata.full_name
-  const email = token.email
 
 
   

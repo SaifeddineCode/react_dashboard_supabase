@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
-import {Link, useNavigate} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import {Link,} from 'react-router-dom'
 import { supabase } from '../utils/supabase'
 
 import register from "../components/blog/images/register.png"
@@ -80,7 +80,7 @@ const SignUp = ({setCurrentSession}) => {
                     full_name: fullName,
                     image : URL_IMAGE
                     },
-                    emailRedirectTo:"http://localhost:3000/"
+                    emailRedirectTo:"https://react-dashboard-supabase.netlify.app/"
                 }
                 }
             )

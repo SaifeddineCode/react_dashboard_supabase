@@ -1,17 +1,10 @@
 import React, { useState } from 'react'
 import SignUp from '../SignUp'
 import Login from '../Login'
-import { useLocation } from 'react-router-dom'
 
 const Authentication = ({setToken}) => {
 
-    const [currentSession,setCurrentSession] = useState("login")
-
-    // const {pathname} = useLocation()
-
-    // const currentPathName = pathname.slice("1")
-
-    // console.log(currentPathName)
+    const [currentSession,setCurrentSession] = useState("register")
 
   return (
     <div>

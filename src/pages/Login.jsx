@@ -143,9 +143,9 @@ const Login = ({setToken,setCurrentSession}) => {
                 <div className='flex flex-col '>
                     <div>Email adress : 
                     <span 
-                        onClick={()=>copyToClipboard("jakijaki20292029@gmail.com")}
+                        onClick={()=>copyToClipboard("reactdashboardsupabase@gmail.com")}
                         className='underline cursor-pointer'>
-                        jakijaki20292029@gmail.com
+                        reactdashboardsupabase@gmail.com
                     </span> 
                     </div>
                     <div>Password : 

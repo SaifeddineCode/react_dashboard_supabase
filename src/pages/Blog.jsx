@@ -43,7 +43,7 @@ const Blog = () => {
         </div> 
         :
         
-        <div className='flex justify-between mt-10 flex-wrap gap-2'>
+        <div className='flex justify-start mt-10 flex-wrap gap-2'>
         {
           blogs?.map((blog)=>{
             return <SinglePost blog={blog} blogs={blogs} />

@@ -10,7 +10,7 @@ import avatarProfile from "./images/avatarProfile.jpg"
 
 const SignUp = ({setCurrentSession}) => {
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
 
     const [email,setEmail] = useState("")
@@ -80,7 +80,7 @@ const SignUp = ({setCurrentSession}) => {
                     full_name: fullName,
                     image : URL_IMAGE
                     },
-                    // emailRedirectTo:"http://localhost:3000/"
+                    emailRedirectTo:"http://localhost:3000/"
                 }
                 }
             )

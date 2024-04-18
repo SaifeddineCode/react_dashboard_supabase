@@ -4,7 +4,7 @@ import Login from '../Login'
 
 const Authentication = ({setToken}) => {
 
-    const [currentSession,setCurrentSession] = useState("register")
+    const [currentSession,setCurrentSession] = useState("login")
 
   return (
     <div>

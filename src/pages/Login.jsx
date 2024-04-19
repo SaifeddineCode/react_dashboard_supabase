@@ -23,6 +23,8 @@ const Login = ({setToken,setCurrentSession}) => {
 
     const handleSubmit = async (e) =>{
 
+        e.preventDefault()
+
         if(!email || !password ){
            return toast.info('Please enter you informations', {
                 position: "top-right",
@@ -36,8 +38,6 @@ const Login = ({setToken,setCurrentSession}) => {
                 transition: Bounce,
                 })
         }
-
-        e.preventDefault()
         
         try {
             const { data, error } = await supabase.auth.signInWithPassword({

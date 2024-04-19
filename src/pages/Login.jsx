@@ -23,6 +23,20 @@ const Login = ({setToken,setCurrentSession}) => {
 
     const handleSubmit = async (e) =>{
 
+        if(!email || !password ){
+           return toast.info('Please enter you informations', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+                })
+        }
+
         e.preventDefault()
         
         try {

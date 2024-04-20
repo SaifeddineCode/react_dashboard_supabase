@@ -6,7 +6,6 @@ import { Bounce, ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 import login from "../components/blog/images/login.png"
-import { useDispatch } from 'react-redux';
 
 
 const Login = ({setToken,setCurrentSession}) => {

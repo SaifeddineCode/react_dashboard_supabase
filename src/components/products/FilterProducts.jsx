@@ -38,14 +38,14 @@ const FilterProducts = () => {
 
         {/* { showFilterSide && <FilterSide setShowFilterSide={setShowFilterSide} />} */}
 
-        <div>
+        {/* <div>
             <span className='font-semibold'>Sorts By: </span>
             <select className=' bg-transparent outline-none '>
                 <option>Newest</option>
                 <option>Price : High-Low</option>
                 <option>Price : Low-High</option>
             </select>
-        </div>
+        </div> */}
 
     </div>
   )

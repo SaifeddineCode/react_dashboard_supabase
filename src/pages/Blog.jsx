@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import FirstSection from '../components/FirstSection'
 import SearchPost from '../components/blog/SearchPost'
 import SinglePost from '../components/blog/SinglePost';
@@ -11,6 +11,8 @@ const Blog = () => {
 
   const [isAddNewPost,setIsAddingNewPost] = useState(false)
 
+  const [searchPost,setSearchPost] = useState("")
+
   const {data :blogs ,isLoading} = useQuery({
     queryKey : ["blogs"],
     queryFn : getBlogs,
@@ -22,11 +24,15 @@ const Blog = () => {
     }
   })
 
+  useEffect(()=>{
+    console.log(searchPost)
+  },[searchPost])
+
 
   return (
     <div>
       <FirstSection setIsAddingNewPost={setIsAddingNewPost} text={"Blog"} hasaButoon={true} textButton={"New Post"}  />
-      <SearchPost  />
+      <SearchPost setSearchPost={setSearchPost}  />
       <div>
 
        {

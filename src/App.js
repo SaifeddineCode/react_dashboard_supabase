@@ -92,11 +92,6 @@ function App() {
 
   return (
     <div>
-      {/* {filterSideIsOpened &&
-      <div className="absolute top-0 right-0">
-        <FilterSide />
-      </div>
-      } */}
       { isRouteMatched ? 
       <div className={`flex `}>
         <SideBar />

@@ -24,9 +24,14 @@ const Blog = () => {
     }
   })
 
-  useEffect(()=>{
-    console.log(searchPost)
-  },[searchPost])
+
+  const filteredBlogs = blogs?.filter((blog) =>
+  blog.title?.toLowerCase().includes(searchPost.toLowerCase())
+  )
+        
+  // useEffect(()=>{
+  //   console.log(searchPost)
+  // },[searchPost])
 
 
   return (
@@ -42,12 +47,19 @@ const Blog = () => {
         </div> 
         :
         
-        <div className='flex justify-start mt-10 flex-wrap gap-2'>
-        {
-          blogs?.map((blog)=>{
-            return <SinglePost blog={blog} blogs={blogs} />
-          })
-        }  
+        <div className='flex justify-start mt-10 flex-wrap gap-2'> 
+            {
+              searchPost ? 
+              
+              filteredBlogs.map((blog)=>{
+                return <SinglePost blog={blog} blogs={blogs} />
+              })
+              
+              :
+              blogs?.map((blog)=>{
+                return <SinglePost blog={blog} blogs={blogs} />
+              })
+            }
         </div>
 
        }    

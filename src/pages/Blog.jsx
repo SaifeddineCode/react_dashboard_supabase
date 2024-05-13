@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import FirstSection from '../components/FirstSection'
 import SearchPost from '../components/blog/SearchPost'
 import SinglePost from '../components/blog/SinglePost';

@@ -64,8 +64,6 @@ const Blog = () => {
 
        }    
 
-
-
       </div>
       {
         isAddNewPost && <NewPost setIsAddingNewPost={setIsAddingNewPost} />

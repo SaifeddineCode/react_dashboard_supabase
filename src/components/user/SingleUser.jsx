@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import avatar from "../../components/user/images/avatar.jpg"
 
 const SingleUser = ({user}) => {
 

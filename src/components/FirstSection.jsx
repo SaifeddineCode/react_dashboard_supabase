@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 
-const FirstSection = ({setIsAddingNewPost,text,hasaButoon = false,textButton,token}) => { 
+const FirstSection = ({setIsAddingNewPost,text,hasaButoon = false,textButton,token,setIsAddingNewUser}) => { 
 
     const {pathname} = useLocation()
 
@@ -10,6 +10,8 @@ const FirstSection = ({setIsAddingNewPost,text,hasaButoon = false,textButton,tok
     const handleButton = () => {
         if(currentPathname === "blog" ){
             setIsAddingNewPost(prev => !prev)
+        } else if (currentPathname === "user") {
+            setIsAddingNewUser(prev => !prev)
         }
     }
 

@@ -3,9 +3,11 @@ import { supabase } from "../utils/supabase"
 export const getProfiles = async () =>{
     
     try{
-        let { data, error } = await supabase
-            .from('profiles')
-            .select('*')
+        
+        let { data,error } = await supabase
+        .from('profiles')
+        .select('*')
+
         if(error){
             throw new Error(error)
         }
@@ -16,3 +18,23 @@ export const getProfiles = async () =>{
     }
 
 }
+
+
+export const addNewUser = async (newUser)  => {
+    try {
+        const { data, error } = await supabase
+        .from('profiles')
+        .insert([newUser])
+        .select()
+
+        if(error) {
+            throw error
+        }
+
+        return data
+
+    } catch (error) {
+        console.error("error from inserting new user", error)
+    }
+}
+

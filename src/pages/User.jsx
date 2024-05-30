@@ -7,6 +7,7 @@ import { useQuery } from 'react-query'
 import { getProfiles } from '../services/apiProfiles'
 
 import {SyncLoader} from "react-spinners"
+import AddNewUser from '../components/user/AddNewUser'
 
 
 const User = () => {
@@ -17,23 +18,27 @@ const User = () => {
 
   const [searchUser,setSearchUser] = useState("")
 
+  const [isAddingNewUser,setIsAddingNewUser] = useState(false)
+
+
 
   const {data : profiles,isLoading } = useQuery({
     queryKey :["profiles"],
     queryFn : getProfiles
   }) 
 
-  
 
   const filteredUsers = profiles?.filter((user) =>
   user.full_name?.toLowerCase().includes(searchUser.toLowerCase())
   );
 
 
+
   return (
 
     <div>
-        <FirstSection text={"User"} hasaButoon={false} textButton={"New User"} />
+        {isAddingNewUser && <AddNewUser setIsAddingNewUser={setIsAddingNewUser} />}
+        <FirstSection text={"User"} hasaButoon={true} textButton={"New User"} setIsAddingNewUser={setIsAddingNewUser} />
         <div className='mt-10 bg-white shadow-md rounded-xl'>
           <div className=' flex gap-5 justify-between items-center p-7 relative'>
             <div>
